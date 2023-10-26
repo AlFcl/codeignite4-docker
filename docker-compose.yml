@@ -1,0 +1,17 @@
+version: '3'
+services:
+    alf-dev:
+        build:
+            context: ./php
+        ports:
+            - 9111:80
+        volumes:
+            - ./app:/var/www/html/app/
+
+        container_name: alf-dev
+        networks:
+            - red_default
+
+networks:
+  red_default:
+    external: true
